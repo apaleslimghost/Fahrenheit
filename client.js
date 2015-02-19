@@ -1,3 +1,3 @@
 var a = require('./a');
 
-console.log(a);
+document.getElementById('a').innerHTML = a;
