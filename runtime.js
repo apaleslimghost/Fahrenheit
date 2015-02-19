@@ -31,7 +31,7 @@ function values(obj) {
 function getDependents(modules, id) {
 	var dependents = modules.filter(function(module) {
 		return contains(values(module.deps), id);
-	})
+	});
 
 	var dependentPairs = dependents.map(function(dep) {
 		return [id, dep.id];
@@ -74,6 +74,7 @@ exports.module = function(id, fn, args) {
 };
 
 exports.update = function(id, src) {
+	/*jshint evil:true*/
 	var fn = new Function('require', 'module', 'exports', src);
 	modules[id][0] = fn;
 
@@ -86,4 +87,4 @@ exports.update = function(id, src) {
 			}, m, m.exports, outer, modules, cache, entry);
 		});
 	}).catch(console.error.bind(console));
-}
+};
