@@ -83,7 +83,7 @@ exports.update = function(id, src) {
 			modules[name][0].call(m.exports, function(x){
 				var id = modules[name][1][x];
 				return require(id ? id : x);
-			}, m, m.exports,outer, modules, cache, entry);
+			}, m, m.exports, outer, modules, cache, entry);
 		});
 	}).catch(console.error.bind(console));
 }
