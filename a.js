@@ -1,1 +1,1 @@
-module.exports = 'aww yiss';
+module.exports = 'ohai';
